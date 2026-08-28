@@ -104,7 +104,7 @@ export function generateReport(seedSource: string): GeneratedReport {
   );
 
   const seed = hash(seedSource);
-  const category = keyed ?? CATEGORIES[seed % CATEGORIES.length];
+  const category = keyed ?? CATEGORIES[seed % CATEGORIES.length]!;
 
   const lat = 40.71 + ((seed % 1800) / 1000) * 0.05;
   const lng = -74.02 + (((seed >> 5) % 1800) / 1000) * 0.05;
